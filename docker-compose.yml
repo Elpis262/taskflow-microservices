@@ -1,0 +1,100 @@
+
+services:
+  # 1. User Service DB
+  user-db:
+    image: postgres:15
+    container_name: user-db
+    environment:
+      POSTGRES_DB: user_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  # 2. Project Service DB
+  project-db:
+    image: postgres:15
+    container_name: project-db
+    environment:
+      POSTGRES_DB: project_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+
+  # 3. Task Service DB
+  task-db:
+    image: postgres:15
+    container_name: task-db
+    environment:
+      POSTGRES_DB: task_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+
+  # 4. Notification Service DB
+  notification-db:
+    image: postgres:15
+    container_name: notification-db
+    environment:
+      POSTGRES_DB: notification_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5435:5432"
+
+  # 5. Comment Service DB
+  comment-db:
+    image: postgres:15
+    container_name: comment-db
+    environment:
+      POSTGRES_DB: comment_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5436:5432"
+
+  # 6. Attachment Service DB
+  attachment-db:
+    image: postgres:15
+    container_name: attachment-db
+    environment:
+      POSTGRES_DB: attachment_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5437:5432"
+
+  # 7. Analytics Service DB
+  analytics-db:
+    image: postgres:15
+    container_name: analytics-db
+    environment:
+      POSTGRES_DB: analytics_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5438:5432"
+
+  # 8. Activity Service DB
+  activity-db:
+    image: postgres:15
+    container_name: activity-db
+    environment:
+      POSTGRES_DB: activity_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5439:5432"
+
+  # 9. Search Service DB
+  search-db:
+    image: postgres:15
+    container_name: search-db
+    environment:
+      POSTGRES_DB: search_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5440:5432"
