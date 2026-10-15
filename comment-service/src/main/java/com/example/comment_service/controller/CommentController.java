@@ -29,4 +29,23 @@ public class CommentController {
     public List<Comment> getCommentsByTaskId(@PathVariable Long taskId) {
         return commentRepository.findByTaskId(taskId);
     }
+
+    @PutMapping("/{id}")
+    public Comment updateComment(@PathVariable Long id, @RequestBody Comment commentDetails) {
+        Comment comment = commentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Комментарий не найден с id: " + id));
+        
+        comment.setText(commentDetails.getText());
+        
+        return commentRepository.save(comment);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteComment(@PathVariable Long id) {
+        Comment comment = commentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Комментарий не найден с id: " + id));
+        
+        commentRepository.delete(comment);
+        return "Комментарий с id " + id + " успешно удален";
+    }
 }
